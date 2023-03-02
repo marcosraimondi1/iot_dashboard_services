@@ -1,0 +1,27 @@
+sudo apt-get update     // actualiza repositorios de linux
+wget https://get.docker.com/    // descargar instalador docker
+mv index.html install_docker.sh // cambiar nombre archivo
+chmod 777 install_docker.sh  // otorga al archivo acceso total
+./install_docker.sh   // ejecutar instalador
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo rm install_docker.sh // eliminar instalador
+
+// clonar repositorio servicios
+sudo git clone https://github.com/marcosraimondi1/iot_gl_services.git
+
+sudo mv iot_gl_services/ iot // cambio de nombre
+cd iot
+
+// clonar repositorio app
+sudo git clone https://github.com/marcosraimondi1/iot_gl_app.git
+
+// WARNING .ENV - HAY Q CREAR EL ARCHIVO
+
+sudo mv iot_gl_app/ app  // cambio de nombre del repo
+
+
+// ejecutar archivo servicios
+docker-compose -f docker-compose-production.yml up

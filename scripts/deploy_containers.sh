@@ -8,6 +8,7 @@ if [ $FIRST_DEPLOY ]; then
     source /etc/environment
 else
     echo "starting server"
+    sudo docker-compose -f docker-compose-production.yml down
     sudo docker-compose -f docker-compose-production.yml build
     sudo docker-compose -f docker-compose-production.yml up -d
 fi

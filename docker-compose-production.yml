@@ -14,7 +14,7 @@ services:
   node:
     container_name: node
     image: "node:18"
-    restart: always
+    # restart: always
     working_dir: /home/node/app
     volumes:
       - ./app/:/home/node/app
@@ -37,7 +37,7 @@ services:
   mongo:
     container_name: mongo
     image: mongo:4.4
-    restart: always
+    # restart: always
     logging:
       driver: "none"
     environment:
@@ -52,7 +52,7 @@ services:
   emqx:
     container_name: emqx
     image: emqx/emqx:4.2.3
-    restart: always
+    # restart: always
     ports:
       - 18083:18083
       - 1883:1883

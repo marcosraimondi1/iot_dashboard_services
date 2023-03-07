@@ -30,7 +30,7 @@ services:
     extra_hosts:
       - "localhost:192.168.0.15"
 
-    command: sh -c "echo 'delaying 30 seconds' && sleep 30 && npm run startProd"
+    command: sh -c "echo 'delaying 30 seconds' && sleep 30 && npm run startAll"
     # command: sh -c "npm install" 
     # - run docker_node_install first to install dependencies
 

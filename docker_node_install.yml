@@ -1,3 +1,6 @@
+# first container run
+# installs node_modules in container and builda app
+
 version: "3.8"
 
 services:
@@ -8,4 +11,4 @@ services:
     volumes:
       - ./app/:/home/node/app
 
-    command: sh -c "npm install"
+    command: sh -c "npm install && npm run build"

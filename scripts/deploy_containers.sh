@@ -1,4 +1,5 @@
 # deploy containers
+source /etc/environment
 if [ $FIRST_DEPLOY ]; then
     echo "installing node_modules and building app"
     sudo docker-compose -f docker-compose-production.yml down
